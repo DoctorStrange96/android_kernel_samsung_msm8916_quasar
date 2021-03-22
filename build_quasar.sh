@@ -51,7 +51,7 @@ BUILD_DTB()
 	echo "----------------------------------------------"
 	echo "Building dtb for $QS_VARIANT..."
 	echo " "
-	$QS_DIR/tools/dtbTool -o $QS_DIR/quasar/dtb.img $QS_DIR/output/arch/arm/boot/dts/
+	$QS_DIR/tools/dtbTool -o $QS_DIR/quasar/dtb.img -s 2048 -p $QS_DIR/output/scripts/dtc/ $QS_DIR/output/arch/arm/boot/dts/
 	echo " "
 }
 PACK_COMMON_IMG()
