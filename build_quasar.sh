@@ -23,7 +23,7 @@ QS_VERSION=v$QS_V_MAJOR.$QS_V_MINOR
 QS_BUILD=BRA7
 QS_DATE=$(date +%Y%m%d)
 QS_TOOLCHAIN=~/Toolchains/Linaro-4.9/bin/arm-linux-gnueabihf-
-QS_JOBS=`grep processor /proc/cpuinfo|wc -l`
+QS_JOBS=$(expr $(((`nproc` * 2) + 1)))
 QS_DIR=$(pwd)
 # Init Methods
 CLEAN_SOURCE()
