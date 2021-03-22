@@ -22,7 +22,7 @@ QS_V_MINOR=0
 QS_VERSION=v$QS_V_MAJOR.$QS_V_MINOR
 QS_BUILD=BRA7
 QS_DATE=$(date +%Y%m%d)
-QS_TOOLCHAIN=~/Toolchains/Linaro-4.9/bin/arm-linux-gnueabihf-
+QS_TOOLCHAIN=~/Toolchains/AOSP-4.8/bin/arm-eabi-
 QS_JOBS=$(expr $(((`nproc` * 2) + 1)))
 QS_DIR=$(pwd)
 # Init Methods
@@ -43,6 +43,7 @@ BUILD_ZIMAGE()
 	mkdir output
 	make -C $QS_DIR -j$QS_JOBS O=output quasar_msm8916_defconfig VARIANT_DEFCONFIG=$QS_DEFCON SELINUX_DEFCONFIG=quasar_selinux_defconfig
 	make -C $QS_DIR -j$QS_JOBS O=output
+      find . -type f -iname "pronto_wlan.ko" -exec cp -f  {} $QS_DIR/quasar/tools/flashable/pronto \;
 	echo " "
 }
 BUILD_DTB()
