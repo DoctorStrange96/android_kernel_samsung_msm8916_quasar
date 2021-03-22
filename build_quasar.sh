@@ -43,7 +43,7 @@ BUILD_ZIMAGE()
 	mkdir output
 	make -C $QS_DIR -j$QS_JOBS O=output quasar_msm8916_defconfig VARIANT_DEFCONFIG=$QS_DEFCON SELINUX_DEFCONFIG=quasar_selinux_defconfig
 	make -C $QS_DIR -j$QS_JOBS O=output
-      find . -type f -iname "pronto_wlan.ko" -exec cp -f  {} $QS_DIR/quasar/tools/flashable/pronto \;
+      find . -type f -iname "wlan.ko" -exec cp -f {} $QS_DIR/quasar/tools/flashable/pronto \;
 	echo " "
 }
 BUILD_DTB()
