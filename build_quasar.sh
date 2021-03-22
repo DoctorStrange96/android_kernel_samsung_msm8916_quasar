@@ -22,7 +22,7 @@ QS_V_MINOR=0
 QS_VERSION=v$QS_V_MAJOR.$QS_V_MINOR
 QS_BUILD=BRA7
 QS_DATE=$(date +%Y%m%d)
-QS_TOOLCHAIN=/home/blackmesa/Scrivania/Android/Sorgenti/Toolchain/arm-eabi-4.9/bin/arm-eabi-
+QS_TOOLCHAIN=~/Toolchains/Linaro-4.9/bin/arm-linux-gnueabihf-
 QS_JOBS=`grep processor /proc/cpuinfo|wc -l`
 QS_DIR=$(pwd)
 # Init Methods
